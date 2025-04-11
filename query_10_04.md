@@ -41,5 +41,3 @@ SELECT COUNT(ID) FROM db_university_2.departments;
 
 SELECT COUNT(*) FROM db_university_2.teachers
 WHERE phone IS NULL
-
-(non funziona phone = ' ')
