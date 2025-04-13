@@ -79,3 +79,57 @@ FROM departments
 JOIN degrees ON departments.id = degrees.department_id
 GROUP BY departments.name
 
+# RIPASSINO SELECT:
+
+1. Selezionare tutti gli insegnanti
+
+SELECT *
+FROM teachers
+
+OPPURE
+
+SELECT teachers.name AS teacher_name, teachers.surname AS teacher_surname
+FROM teachers
+
+2. Selezionare tutti i referenti per ogni dipartimento
+
+SELECT departments.name AS departments, departments.head_of_department AS head_of_department
+FROM departments
+
+3. Selezionare tutti gli studenti il cui nome inizia per "E" (373)
+
+SELECT *
+FROM students
+WHERE students.name LIKE 'E%'
+
+4. Selezionare tutti gli studenti che si sono iscritti nel 2021 (734)
+
+SELECT *
+FROM students
+WHERE YEAR(enrolment_date) = '2021'
+
+5. Selezionare tutti i corsi che non hanno un sito web (676)
+
+SELECT *
+FROM courses
+WHERE courses.website IS NULL
+
+
+6. Selezionare tutti gli insegnanti che hanno un numero di telefono (50)
+
+SELECT *
+FROM teachers
+WHERE teachers.phone IS NOT NULL
+
+7. Selezionare tutti gli appelli d'esame dei mesi di giugno e luglio 2020 (2634)
+
+SELECT *
+FROM exams
+WHERE YEAR(exams.date) = '2020' AND MONTH(exams.date) = 6 OR MONTH(exams.date) = 7
+
+
+8. Qual è il numero totale degli studenti iscritti? (5000)
+
+SELECT COUNT(*)
+FROM students
+
